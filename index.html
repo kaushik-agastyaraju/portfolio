@@ -88,6 +88,8 @@
   /* education */
   .edu { display:flex; gap:16px; align-items:center; padding:16px 4px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
   .edu p { margin:1px 0 0; color:var(--muted); font-size:14.5px; }
+  .edu + .edu { border-top:0; }
+  .edu p a { color:inherit; }
 
   /* skills */
   .skill-group { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:22px 0 10px; }
@@ -193,6 +195,10 @@
   <div class="edu"><div class="logo"><img src="logos/hdsi.png" alt=""></div>
     <div class="job-main"><h3>UC San Diego</h3><p>B.S. Data Science, Minor in Business Analytics</p></div>
     <span class="date">Mar 2027</span>
+  </div>
+  <div class="edu"><div class="logo" style="background:#1f2b4d"><span style="color:#fff">VA</span></div>
+    <div class="job-main"><h3>Veritas AI</h3><p><a href="https://www.veritasai.com/ai-scholars" target="_blank" rel="noopener">AI Scholars Bootcamp</a>, <a href="AI_Scholars_Certificate.pdf" target="_blank" rel="noopener">certificate</a></p></div>
+    <span class="date">Summer 2022</span>
   </div>
 
   <h2><b>04</b>Skills</h2>
