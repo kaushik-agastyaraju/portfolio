@@ -28,6 +28,9 @@
   .mono::after { content:"."; color:var(--warm); }
 
   /* hero */
+  .hero { display:flex; align-items:center; gap:24px; margin:8px 0 26px; }
+  .photo { width:112px; height:112px; border-radius:50%; object-fit:cover; flex-shrink:0; border:1px solid var(--line); }
+  .hero .sub { margin-bottom:0; }
   .status { display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted); margin-bottom:14px; }
   .status i { width:7px; height:7px; border-radius:50%; background:var(--accent); }
   h1 { font:400 clamp(40px, 7vw, 58px)/1.08 "Fraunces", Georgia, serif; letter-spacing:-0.025em; margin:0 0 12px; }
@@ -62,11 +65,10 @@
   .job li { margin-bottom:6px; }
   .job li::marker { color:var(--warm); }
 
-  .logo { width:48px; height:48px; border-radius:50%; border:1px solid var(--line); background:#fff;
-          display:grid; place-items:center; flex-shrink:0; overflow:hidden; position:relative; }
-  .logo img { width:30px; height:30px; object-fit:contain; position:absolute; }
-  .logo span { font:500 15px "Fraunces", Georgia, serif; color:#5d5850; }
-  .logo img + span { visibility:hidden; }
+  .logo { width:48px; height:48px; border-radius:12px; border:1px solid var(--line);
+          display:grid; place-items:center; flex-shrink:0; overflow:hidden; }
+  .logo svg { width:26px; height:26px; }
+  .logo span { font:700 13px "Inter", sans-serif; letter-spacing:.02em; }
 
   /* projects */
   .projects { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
@@ -106,6 +108,8 @@
   footer a:hover { text-decoration:underline; }
 
   @media (max-width:560px) {
+    .hero { flex-direction:column; align-items:flex-start; gap:16px; }
+    .photo { width:96px; height:96px; }
     main { padding:28px 18px 40px; }
     .bar { margin-bottom:44px; }
     .projects { grid-template-columns:1fr; }
@@ -120,8 +124,13 @@
 </head>
 <body>
 <main>
-  <h1>Kaushik Agastyaraju</h1>
-  <p class="sub">Data Science student at UC San Diego. I turn data into models, metrics, and decisions.</p>
+  <div class="hero">
+    <img class="photo" src="photo.jpg" alt="Kaushik Agastyaraju">
+    <div>
+      <h1>Kaushik Agastyaraju</h1>
+      <p class="sub">Data Science student at UC San Diego. I turn data into models, metrics, and decisions.</p>
+    </div>
+  </div>
   <div class="links">
     <a class="primary" href="Kaushik_Agastyaraju_Resume.pdf">Resume</a>
     <a href="https://www.linkedin.com/in/kaushik-agastyaraju/" target="_blank" rel="noopener">LinkedIn</a>
@@ -132,7 +141,7 @@
   <h2><b>01</b>Experience</h2>
 
   <details class="job">
-    <summary><div class="logo"><img src="logos/adobe.png" alt="" onerror="if(this.dataset.f){this.remove()}else{this.dataset.f=1;this.src='https://www.google.com/s2/favicons?domain=adobe.com&amp;sz=128'}"><span>Ad</span></div>
+    <summary><div class="logo" style="background:#ffffff"><svg aria-hidden="true" fill="#FA0F00" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624Z"/></svg></div>
       <div class="job-main"><h3>Adobe</h3><p>Data Science Intern</p></div>
       <span class="date">Jun – Sep 2026</span><span class="plus" aria-hidden="true"></span>
     </summary>
@@ -140,7 +149,7 @@
   </details>
 
   <details class="job">
-    <summary><div class="logo"><img src="logos/kaiser.png" alt="" onerror="if(this.dataset.f){this.remove()}else{this.dataset.f=1;this.src='https://www.google.com/s2/favicons?domain=kaiserpermanente.org&amp;sz=128'}"><span>KP</span></div>
+    <summary><div class="logo" style="background:#0B5DA7"><span style="color:#ffffff;font-size:14px">KP</span></div>
       <div class="job-main"><h3>Kaiser Permanente</h3><p>Data Analyst Intern</p></div>
       <span class="date">Jun – Sep 2025</span><span class="plus" aria-hidden="true"></span>
     </summary>
@@ -148,7 +157,7 @@
   </details>
 
   <details class="job">
-    <summary><div class="logo"><img src="logos/hdsi.png" alt="" onerror="if(this.dataset.f){this.remove()}else{this.dataset.f=1;this.src='https://www.google.com/s2/favicons?domain=datascience.ucsd.edu&amp;sz=128'}"><span>HD</span></div>
+    <summary><div class="logo" style="background:#182B49"><span style="color:#FFCD00;font-size:11px">HDSI</span></div>
       <div class="job-main"><h3>Halicioglu Data Science Institute</h3><p>Outreach &amp; Research Fellow</p></div>
       <span class="date">Dec 2024 – Jun 2025</span><span class="plus" aria-hidden="true"></span>
     </summary>
@@ -176,7 +185,7 @@
   </div>
 
   <h2><b>03</b>Education</h2>
-  <div class="edu"><div class="logo"><img src="logos/ucsd.png" alt="" onerror="if(this.dataset.f){this.remove()}else{this.dataset.f=1;this.src='https://www.google.com/s2/favicons?domain=ucsd.edu&amp;sz=128'}"><span>UC</span></div>
+  <div class="edu"><div class="logo" style="background:#182B49"><span style="color:#FFCD00;font-size:11px">UCSD</span></div>
     <div class="job-main"><h3>UC San Diego</h3><p>B.S. Data Science, Minor in Business Analytics</p></div>
     <span class="date">Mar 2027</span>
   </div>
